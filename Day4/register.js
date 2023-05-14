@@ -1,43 +1,83 @@
-const regContainer = document.createElement("div");
-regContainer.classList.add("regis");
-regContainer.classList.add("center");
-
-const title =document.createElement("h3");
-title.innerHTML = "create your account";
+import Login from "./login"
 
 
-const emailInput = document.createElement("input");
-emailInput.placeholder = "Enter your email";
+class Register {
+    $containerDiv
+    $titleHeader
+    $signupForm
+    $emailInputEmail
+    $nameInputTxt
+    $passInputPass
+    $confirmPassInputPass
+    $submitBtn
+    $gotoSigninLink
+constructor() {
+    this.$emailInputEmail = document.createElement("input"); // <input> </input>
+    this.$emailInputEmail.type = "email"; // <input type="email"> </input>
+    this.$emailInputEmail.placeholder = "Enter your email ..."; // <input type="email" placeholder="Enter your email ..."> </input>
 
-const nameInput = document.createElement("input");
-nameInput.placeholder = "Enter your name";
-
-const passInput = document.createElement("input");
-passInput.placeholder = "Enter your password";
-passInput.type="password";
-
-const confirmPassInput = document.createElement("input");
-confirmPassInput.type="password";
-confirmPassInput.placeholder = "Enter your password";
-
-const submitButton = document.createElement("input");
-submitButton.type = "submit";
-submitButton.value= " Register"
-
-const linkToLogin= document.createElement("a");
-linkToLogin.innerHTML="you already had an account?"
+    this.$nameInputTxt = document.createElement("input");
+    this.$nameInputTxt.type = "text";
+    this.$nameInputTxt.placeholder = "Enter your name ...";
 
 
+    this.$confirmPassInputPass = document.createElement("input");
+    this.$confirmPassInputPass.type ="password";
+    this.$confirmPassInputPass.placeholder = "confirm your password..";
 
-regContainer.appendChild(title);
-regContainer.appendChild(emailInput);
-regContainer.appendChild(nameInput);
-regContainer.appendChild(passInput);
-regContainer.appendChild(confirmPassInput);
-regContainer.appendChild(submitButton);
-regContainer.appendChild(linkToLogin);
+    this.$submitBtn = document.createElement("button");
+    this.$submitBtn.type = "submit";
+    this.$submitBtn.innerHTML = " Register";
+    this.$submitBtn,addEventListener("click" , this.handleSuibmit);
+    
+    this.$gotoSigninLink = document.createElement("a")
+    this.$gotoSigninLink.innerHTML=" you already have an account? , sig in now ";
+    this$goto
 
-const regForm = document.createElement("from")
-regForm.appendChild(regContainer)
+    this.$containerDiv = document.createElement("div");
+    this.$containerDiv.classList.add("center", "app");
 
-const app = document.getElementById("app")
+
+    this.$titleHeader = document.createElement("h2");
+    this.$titleHeader.innerHTML = "create your account";
+
+    this.$signupForm = document.createElement("form")
+ }
+   initRender = (container) => {
+     this.$signupForm.appendChild(this.$emailInputEmail);
+     this.$signupForm.appendChild(this.$nameInputTxt);
+     this.$signupForm.appendChild(this.$passInputPass);
+     this.$signupForm.appendChild(this.$confirmPassInputPass);
+     this.$signupForm.appendChild(this.$submitBtn);
+
+     this.$containerDiv.appendChild(this.$titleHeader);
+     this.$containerDiv.appendChild(this.$signupForm);
+     this.$containerDiv.appendChild(this.$gotoSigninLink);
+
+     container.appendChild(this.$containerDiv);
+
+
+   }
+   handleSubmit = (e) => {
+    // import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
+const auth = getAuth();
+createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+   }
+ 
+   gotoSignin = () =>{
+     const login = new login();
+   }
+} 
+
+export default Register;
