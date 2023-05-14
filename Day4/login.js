@@ -58,6 +58,7 @@ class Login {
   
     gotoSignin = () =>{
       const login = new login();
+      app.changeActiveScreen(signup)
     }
  } 
 export default Login;

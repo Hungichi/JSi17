@@ -1,4 +1,4 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;   
@@ -34,4 +34,14 @@ input{
     margin-bottom: 25px;
     border-radius: 10px;
     outline: none;
-  }
+  } */
+
+.app{
+  display:  flex;
+  flex-direction: column;
+}
+
+.center{
+  justify-content: center;
+  align-items: center;
+}

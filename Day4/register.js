@@ -1,4 +1,5 @@
 import Login from "./login"
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
 
 
 class Register {
@@ -58,8 +59,35 @@ constructor() {
 
 
    }
+
+
    handleSubmit = (e) => {
-    // import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+    e.preventDefault();
+    const email = this.$emailInputEmail.value;
+    const password = this.$passInputPass.value;
+    const confirm = this.$confirmPassInputPass.value;
+    const userName = this.$nameInputTxt.value;
+
+    if(email== ""){
+      alert("email can not be empty");
+      return;
+    }
+    if(password.lenght < 6 ){
+      alert("password ...");
+      return;
+    }
+    if(userName== ""){
+      alert("UserName can not be empty");
+      return;
+    }
+    if(confirmPass== ""){
+      alert("confirm your password");
+      return;
+    }
+    if(password != confirmPass){
+      alert("your password not match")
+    }
+    
 
 const auth = getAuth();
 createUserWithEmailAndPassword(auth, email, password)
@@ -77,6 +105,7 @@ createUserWithEmailAndPassword(auth, email, password)
  
    gotoSignin = () =>{
      const login = new login();
+     
    }
 } 
 

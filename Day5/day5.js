@@ -17,6 +17,10 @@
 //     return student.subject.filter(sb => sb == 'sb1')
 // }
 
+
+
+
+
 // const m = [1,2,3,4,5,6,"hh", "9",80,100]
 // const mSquared = m.filter(checkNumber);
 // console.log(mSquared)
@@ -39,10 +43,12 @@
 // }
 
 
+
+// ---------------B4
  const arr = [1,54,6,7]
  const NewArr = arr.map(abc)
  console.log(NewArr)
  function abc(num){
     return num+5;
  }
- 
+
