@@ -2,63 +2,43 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signin&login.css">
+    <title>Document</title>
 </head>
 
 <body>
-  <div class="header">
-    <img class="img_coverHeader" src="./pic/header.jpg" alt="" />
-    <div class="showdown_bg"></div>
-    <div class="menu">
-      <div class="logo_container">
-        <h2></h2>
-      </div>
-      <ul>
-        <li><a href="">Home page</a>
-        </li>
-        <li><a href="">Services</a>
-        </li>
-        <li><a href="">Sign in</a>
-        </li>
-        <li><a href="">Sign up</a>
-        </li>
-      </ul>
-    </div>
-    <div class="title">
-      <h1>Looking for help?<br />
-      </h1>
-      <div class="header_button_container">
-        <button type="button" onclick="location.href='https://www.facebook.com/hung.ichi.16';" class="contact">Contact
-          us</button>
-      </div>
-    </div>
-    <div class="shelf">
-      <div style="text-align: center;">
-        <h1>hello</h1>
-        <p></p>
-        <div class="items">
-          <div class="stuff">
+    <div id="app"> </div>
 
-          </div>
-        </div>
-      </div>
 
-    </div>
-    <div class="fotter">
-      <div class="contacs">
-        <div class="conmenu">
-          <div  class="logo_container">
-            <h2 style="text-decoration-color: aqua;">HungBooking</h2>
-          </div>
-          <i class="fa-brands fa-square-facebook"></i>
-        </div>
-      </div>
-    </div>
+    <!-- ---------------- Firebase config ----------------- -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyAAU4XaAdzPFIC46lkCMkDQLNzMTD6zKpE",
+            authDomain: "web-intensive-mindx.firebaseapp.com",
+            projectId: "web-intensive-mindx",
+            storageBucket: "web-intensive-mindx.appspot.com",
+            messagingSenderId: "12477481268",
+            appId: "1:12477481268:web:212c2daa6615611ab02561",
+            measurementId: "G-TFEF2G5RVQ"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <script src="./index.js" type="module"></script>
 </body>
 
 </html>

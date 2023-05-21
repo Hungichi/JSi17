@@ -110,56 +110,71 @@
 }
 
 .header_button_container .contact:hover {
-    background-color: #bdb2b7;
+    background-color: #797979;
     color: white;
     cursor: pointer;
     border: 2px solid #f4f4f4;
 }
 .shelf {
+    background-color: rgb(230, 229, 231);
     display: flex;
     width: 100%;
-    height: 500px;
+    height: 800px;
     /* background-color: rgb(166, 204, 204); */
     position: relative;
     justify-content: center;
+    
+}
+
+
+
+.footer{
+    margin-top: 200px;
+    width: 100%;
+    height: 200px;
+    background-color: rgba(39, 36, 36, 0.514)  
 }
 
 .items {
     width: 100%;
-    height: 600px;
-    position: relative;
+    height: 700px;
+    flex-direction: column;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    margin-top: 15px;
+    margin-top: 10px;
 }
-
-.footer{
-    margin-top: 500px;
-    display: block;
-    width: 100%;
-    height: 600px;
-    background-color: rgba(46, 43, 43, 0.514);
-    
-}
-.contacs{
-    position: relative;
-    width: 100%;
-    height: 400px;
-    background-color: rgb(65, 64, 63);
-}
-.contacs li {
-    font-size: 20px;
-}
-.conmenu {
+.book-slot-1,
+.book-slot-2,
+.book-slot-3{
+    background-color: rgb(255, 255, 255);
+    width: 1100px;
+    height: 200px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: 20px;
+    border-radius: 7px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-    width: 100%;
-    height: 150px;
-    position: absolute;
 }
-.logo_container h2{
-    z-index: 1;
-    text-decoration: aqua;
+.logo{
+    text-decoration: white;
+    background-color: rgb(58, 58, 58);
+    width: 100%;
+    height: 300px;
+}
+.booking{
+    object-fit: cover;
+    width: 250px;
+    height: 200px;
+    border-top-left-radius: 7px;
+    border-end-start-radius: 7px;
+}
+.discribe{
+    width: 550px;
+}
+.icon{
+    width:300px;
+}
+.icon i{
+    
 }
