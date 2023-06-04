@@ -41,8 +41,12 @@
 }
 
 .menu .logo_container {
-    width: 100px;
+    width: 150px;
     height: 100px;
+    margin-left: 35px;
+}
+.menu .logo_container h2{
+    margin-top: 33px;
 }
 
 .logo_container img {
@@ -166,9 +170,25 @@
     border-end-start-radius: 7px;
 }
 .discribe{
+    display: flex;
+    flex-direction: column;
     border: #797979;
     border-right: 5px;
     width: 545px;
+}
+.discribe p{
+    display: flex;
+}
+.discribe p i{
+    width: 20px;
+    font-size: 15px;
+}
+.discribe2{
+    margin-top:15px ;
+    display: flex;
+}
+.discribe2 p{
+    display: flex;
 }
 .bookbox{
     position: relative;
@@ -200,10 +220,22 @@ button:hover{
     transform: scale(1.1, 1.1);
 }
 .footer{
-    
     background-color: rgb(96, 96, 96);
     width: 1405px;
-    height: 520px;
+    height: 350px;
+}
+.footer h1{
+    
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+
+}
+.footer  ul {
+    display: flex;
+    width: 20%;
 }
 
 
