@@ -1,8 +1,14 @@
 import app from "./index.js";
 import Login from "./login.js"
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
-
-
+let popup = document.querySelector('.popup')
+let iconclose = document.querySelector('.popup__header i')
+let emailemtp = document.querySelector('.popup__body h2');
+let creatsuccess = document.querySelector('.popup__body h2');
+let useremp = document.querySelector('.popup__body h2');
+let passemp = document.querySelector('.popup__body h2');
+let CFpassemt = document.querySelector('.popup__body h2');
+let wrongcf = document.querySelector('.popup__body h2');
 class Register {
   $containerDiv
   $titleHeader
@@ -17,24 +23,31 @@ class Register {
     this.$emailInputEmail = document.createElement("input"); // <input> </input>
     this.$emailInputEmail.type = "email"; // <input type="email"> </input>
     this.$emailInputEmail.placeholder = "Enter your email ..."; // <input type="email" placeholder="Enter your email ..."> </input>
+    
     this.$nameInputTxt = document.createElement("input");
     this.$nameInputTxt.type = "text";
     this.$nameInputTxt.placeholder = "Enter your name ...";
+    
     this.$passInputPass = document.createElement("input");
     this.$passInputPass.type = "password";
     this.$passInputPass.placeholder = "Enter your password ...";
+   
     this.$confirmPassInputPass = document.createElement("input");
     this.$confirmPassInputPass.type = "password";
     this.$confirmPassInputPass.placeholder = "Confirm your password ...";
+   
     this.$submitBtn = document.createElement("button");
     this.$submitBtn.type = "submit";
     this.$submitBtn.innerHTML = "Register"; // <button> Register </button>
     this.$submitBtn.addEventListener("click", this.handleSubmit);
+   
     this.$gotoSigninLink = document.createElement("a");
     this.$gotoSigninLink.innerHTML = "You already have account? Signin now";
     this.$gotoSigninLink.addEventListener("click", this.gotoSignin);
+   
     this.$containerDiv = document.createElement("div");
     this.$containerDiv.classList.add("center", "app");
+   
     this.$titleHeader = document.createElement("h2");
     this.$titleHeader.innerHTML = "Create your account";
     this.$signupForm = document.createElement("form");
@@ -59,25 +72,36 @@ class Register {
      const confirmPass = this.$confirmPassInputPass.value;
      const userName = this.$nameInputTxt.value;
      if(email == "") {
-      alert("Email cannot be empty!");
-      return;
+      emailemtp.innerHTML="Email empty"
+      toggle()
+    return false;
      }
      if(password.length < 6) {
       alert("Password must be least 6 letters!");
       return;
      }
      if(userName == "") {
-      alert("Username cannot be empty!");
-      return;
+      useremp.innerHTML="User empty"
+    toggle()
+    return false;
+
+     }
+     if(password == ""){
+      passemp.innerHTML="Password empty"
+      toggle()
+    return false;
      }
      if(confirmPass == "") {
-      alert("Confirm your password!");
-      return;
+      CFpassemt.innerHTML="Please confirm your password"
+      toggle()
+    return false;
      }
      if(password != confirmPass) {
-      alert("Your password not match!");
-      return;
+      wrongcf.innerHTML="Your Password Not Macth "
+      toggle()
+    return false;
      }
+    
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -99,4 +123,14 @@ class Register {
     app.changeActiveScreen(login); 
   }
 }
+
+function toggle(e){
+  popup.classList.toggle('hide')
+}
+iconclose.addEventListener('click', toggle)
+popup.addEventListener('click' , function(e)  {
+  if(e.target == e.currentTarget){
+    toggle()
+  }
+})
 export default Register;
